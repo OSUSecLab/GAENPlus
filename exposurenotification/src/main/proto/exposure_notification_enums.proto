@@ -1,0 +1,30 @@
+syntax = "proto2";  // Apple's framework proto libraries only support proto2
+
+package com.google.samples.exposurenotification;
+
+option java_package = "com.google.samples.exposurenotification";
+option java_outer_classname = "ExposureNotificationEnums";
+
+// The confidence value indicates where the calibration data comes from.
+// The higher value means the higher confidence.
+enum CalibrationConfidence {
+  // No calibration data, using fleet-wide as default options.
+  LOWEST_CONFIDENCE = 0;
+
+  // Using average calibration over models from manufacturer.
+  LOW_CONFIDENCE = 1;
+
+  // Using single-antenna orientation for a similar model.
+  MEDIUM_CONFIDENCE = 2;
+
+  // Using significant calibration data for this model.
+  HIGH_CONFIDENCE = 3;
+}
+
+// Infectiousness of the TEK that caused this exposure, computed from the days
+// since onset of symptoms using the daysToInfectiousnessMapping.
+enum Infectiousness {
+  INFECTIOUSNESS_NONE = 0;
+  INFECTIOUSNESS_STANDARD = 1;
+  INFECTIOUSNESS_HIGH = 2;
+}
