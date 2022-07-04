@@ -17,7 +17,7 @@ change the JDK location under `File > Project Structure > JDK Location`.
 This also project depends on a few third-party, open source libraries:
 
 * [BoringSSL](https://boringssl.googlesource.com/boringssl/)
-* [NaoPB](https://jpa.kapsi.fi/nanopb/download/)
+* [NanoPB](https://jpa.kapsi.fi/nanopb/download/)
 
 It is helpful to place both of these dependencies in a common directory. For convenience, shell
 scripts which download and build these third-party libraries are provided which require Docker to
