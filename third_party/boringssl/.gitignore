@@ -8,13 +8,12 @@ ssl/test/runner/runner
 doc/*.html
 doc/doc.css
 
-crypto/
-decrepit/
+CMakeFiles/
+third_party/
 fuzz/
-ssl/
+test/
 tool/
 util/
-third_party/
 
 util/bot/android_ndk
 util/bot/android_sdk/public
