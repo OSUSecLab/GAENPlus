@@ -27,10 +27,10 @@ readonly BORINGSSL_COMMIT_ID="bc2480510960a77bea24edc64fcb089aca103940"
 boringssl_android_build() {
 
   # Process arguments
-  local -r android_abi=$1
+  android_abi=$1
 
   # Build the Docker image for the specific Android ABI
-  local -r dockerfile_path=`dirname "$0"`
+  dockerfile_path=`dirname "$0"`
   docker build --rm \
     --build-arg ANDROID_ABI=$android_abi \
     --build-arg BORINGSSL_COMMIT_ID=$BORINGSSL_COMMIT_ID \
@@ -50,12 +50,12 @@ boringssl_android_build() {
 copy_build_artifacts() {
 
   # Process arguments
-  local -r android_abi=$1
-  local -r dest=$2
+  android_abi=$1
+  dest=$2
 
   # Create a Docker image and tar the build artifacts into local storage
-  local -r image_id=$(docker create ${BORINGSSL_IMAGE}:${android_abi})
-  local -r output_tar="/tmp/boringssl-${android_abi}.tar"
+  image_id=$(docker create ${BORINGSSL_IMAGE}:${android_abi})
+  output_tar="/tmp/boringssl-${android_abi}.tar"
   docker cp ${image_id}:"/opt/boringssl/android/${android_abi}" - > $output_tar
   docker rm $image_id
 
@@ -73,7 +73,7 @@ git --git-dir "$BASE_DIR"/src/.git checkout ${BORINGSSL_COMMIT_ID}
 
 # Compile each ABI and output artifacts into a subfolder
 #for flavour in "armeabi-v7a" "arm64-v8a" "x86" "x86_64"
-for flavour in "arm64-v8a"
+for flavour in "x86"
 do
     boringssl_android_build $flavour
     copy_build_artifacts $flavour "$BASE_DIR"
