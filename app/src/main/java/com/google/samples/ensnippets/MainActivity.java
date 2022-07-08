@@ -89,16 +89,16 @@ public final class MainActivity extends AppCompatActivity {
         // // // // // // // // // // // // // // // // // // // // //
         // Experiment: Matching Test using JNI
         // // // // // // // // // // // // // // // // // // // // //
-        try {
-            BatteryUtil.startRecordingBatteryPercentage(mContext);
-            checkingTestJni();
-        } catch (JSONException e){
-            e.printStackTrace();
-        }
+//        try {
+//            BatteryUtil.startRecordingBatteryPercentage(mContext);
+//            checkingTestJni();
+//        } catch (JSONException e){
+//            e.printStackTrace();
+//        }
         // // // // // // // // // // // // // // // // // // // // //
         // Experiment: Resolution
         // // // // // // // // // // // // // // // // // // // // //
-//        resolutionTest();
+        resolutionTest();
     }
 
 
