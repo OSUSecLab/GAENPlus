@@ -137,6 +137,13 @@ dependencies {
     // Protobuf dependency
     implementation 'com.google.protobuf:protobuf-javalite:3.11.4'
 
+    implementation 'com.android.ndk.thirdparty:openssl:1.1.1g-alpha-1'
+
+    // https://mavenlibs.com/maven/dependency/io.github.vvb2060.ndk/boringssl
+    implementation 'io.github.vvb2060.ndk:boringssl:3.0'
+
+
+
     // Guava dependency
     api "com.google.guava:guava:29.0-android"
 
